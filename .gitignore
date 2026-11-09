@@ -1,0 +1,8 @@
+simulation/build/
+*.vvp
+.DS_Store
+*.swp
+synthesis/*_ecp5.json
+__pycache__/
+docs/report/*.aux
+docs/report/*.log
