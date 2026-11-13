@@ -1,0 +1,59 @@
+VCD info: dumpfile simulation/waveforms/tb_systolic_array.vcd opened for output.
+PASS  identity
+PASS  ones x twos
+PASS  min x min (largest positive sum)
+PASS  min x max (largest negative sum)
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+PASS  random
+==============================================
+ARRAY TESTBENCH: 54 passed, 0 failed -> PASS
+==============================================
+testbench/tb_systolic_array.v:107: $finish called at 7040000 (1ps)

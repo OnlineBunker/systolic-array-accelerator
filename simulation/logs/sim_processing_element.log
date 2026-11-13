@@ -1,0 +1,67 @@
+VCD info: dumpfile simulation/waveforms/tb_processing_element.vcd opened for output.
+--- basic MAC (Q8.8: 1.0 = 256) ---
+ok   [1.0*2.0] a=   256 b=   512 -> acc=0
+ok   [3.0*-1.0] a=   768 b=  -256 -> acc=131072
+ok   [-1.5*-0.5] a=  -384 b=  -128 -> acc=-65536
+ok   [0.25*4.0] a=    64 b=  1024 -> acc=-16384
+--- valid gating ---
+ok   [va=0 no MAC] a=   999 b=   999 -> acc=49152
+ok   [vb=0 no MAC] a=   999 b=   999 -> acc=49152
+--- enable / stall ---
+ok   [en=0 hold] a=   512 b=   512 -> acc=49152
+ok   [en=1 resume] a=   512 b=   512 -> acc=49152
+ok   [flush pipeline] a=     0 b=     0 -> acc=311296
+--- extremes ---
+ok   [min*min] a=-32768 b=-32768 -> acc=311296
+ok   [max*min] a= 32767 b=-32768 -> acc=1074053120
+ok   [max*max] a= 32767 b= 32767 -> acc=344064
+ok   [flush pipeline] a=     0 b=     0 -> acc=1074020353
+--- clear ---
+ok   [clr] a=     0 b=     0 -> acc=0
+--- 40 random cycles ---
+ok   [random] a= 13604 b= 24193 -> acc=0
+ok   [random] a=-26227 b=-31643 -> acc=329121572
+ok   [random] a= -3722 b=-12995 -> acc=329121572
+ok   [random] a=  9414 b=-31547 -> acc=329121572
+ok   [random] a=-10734 b= -9329 -> acc=329121572
+ok   [random] a= 20165 b= 18780 -> acc=329121572
+ok   [random] a= 25187 b=-30966 -> acc=707820272
+ok   [random] a=-13155 b= 16022 -> acc=707820272
+ok   [random] a= -8853 b= 10965 -> acc=497050862
+ok   [random] a= 29391 b= 18723 -> acc=497050862
+ok   [random] a=-16910 b= 24970 -> acc=497050862
+ok   [random] a=  4745 b=  3563 -> acc=497050862
+ok   [random] a=   700 b= -8918 -> acc=497050862
+ok   [random] a= 21839 b= 24635 -> acc=490808262
+ok   [random] a=-25615 b= 19417 -> acc=490808262
+ok   [random] a=-24177 b=-22024 -> acc=490808262
+ok   [random] a=-16293 b= 14217 -> acc=490808262
+ok   [random] a=  -943 b= 12182 -> acc=490808262
+ok   [random] a= 23159 b= -4803 -> acc=490808262
+ok   [random] a= -6343 b=-28897 -> acc=490808262
+ok   [random] a= 22875 b= 19273 -> acc=490808262
+ok   [random] a= 14470 b=  3214 -> acc=490808262
+ok   [random] a=  6003 b=-19293 -> acc=490808262
+ok   [random] a=  3396 b=  -521 -> acc=374992383
+ok   [random] a=-16087 b= -7443 -> acc=374992383
+ok   [random] a=-27425 b=  6521 -> acc=374992383
+ok   [random] a=-21077 b=-12530 -> acc=374992383
+ok   [random] a=   707 b= -4778 -> acc=374992383
+ok   [random] a=-17994 b=-30152 -> acc=374992383
+ok   [random] a= 23955 b= 11268 -> acc=374992383
+ok   [random] a=-18471 b=  9837 -> acc=644917323
+ok   [random] a= 29077 b=  6726 -> acc=644917323
+ok   [random] a=-17740 b=-29304 -> acc=644917323
+ok   [random] a=-25554 b= -7160 -> acc=644917323
+ok   [random] a=-28644 b= 26502 -> acc=644917323
+ok   [random] a=-15248 b=  1139 -> acc=644917323
+ok   [random] a=  1493 b= -2534 -> acc=644917323
+ok   [random] a=  8640 b=-24794 -> acc=641134061
+ok   [random] a= 22406 b=  -136 -> acc=641134061
+ok   [random] a= 11129 b= -6918 -> acc=641134061
+--- synchronous reset ---
+ok   [reset] acc=0
+==============================================
+PE TESTBENCH: 109 checks, 0 errors -> PASS
+==============================================
+testbench/tb_processing_element.v:118: $finish called at 576000 (1ps)

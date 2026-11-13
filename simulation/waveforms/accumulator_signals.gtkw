@@ -1,0 +1,45 @@
+[dumpfile] "tb_top_module.vcd"
+[timestart] 880000
+[size] 1580 960
+[pos] 0 0
+*-15.6 900000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 1
+[signals_width] 400
+[sst_expanded] 0
+[sst_vpaned_height] 0
+@200
+-Clock / control
+@28
+tb_top_module.clk
+@28
+tb_top_module.dut.u_ctrl.clr
+@28
+tb_top_module.dut.u_ctrl.array_en
+@200
+-PE(0,0) MAC
+@420
+tb_top_module.dut.u_array.row[0].col[0].pe.u_mac.prod[31:0]
+@420
+tb_top_module.dut.u_array.row[0].col[0].pe.u_mac.prod_r[31:0]
+@28
+tb_top_module.dut.u_array.row[0].col[0].pe.u_mac.acc_en_r
+@420
+tb_top_module.dut.u_array.row[0].col[0].pe.acc[33:0]
+@200
+-PE(3,3) MAC
+@420
+tb_top_module.dut.u_array.row[3].col[3].pe.u_mac.prod[31:0]
+@420
+tb_top_module.dut.u_array.row[3].col[3].pe.u_mac.prod_r[31:0]
+@28
+tb_top_module.dut.u_array.row[3].col[3].pe.u_mac.acc_en_r
+@420
+tb_top_module.dut.u_array.row[3].col[3].pe.acc[33:0]
+@200
+-Completion
+@28
+tb_top_module.dut.u_ctrl.capture
+@28
+tb_top_module.done
+@28
+tb_top_module.busy

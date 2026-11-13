@@ -1,0 +1,51 @@
+[dumpfile] "tb_top_module.vcd"
+[timestart] 880000
+[size] 1580 960
+[pos] 0 0
+*-15.6 900000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 1
+[signals_width] 400
+[sst_expanded] 0
+[sst_vpaned_height] 0
+@200
+-Clock / control
+@28
+tb_top_module.clk
+@28
+tb_top_module.dut.u_ctrl.feed_en
+@200
+-Row 0: A moves right PE(0,0) to PE(0,3)
+@28
++{PE(0,0) va_in} tb_top_module.dut.u_array.row[0].col[0].pe.va_in
+@420
++{PE(0,0) a_in} tb_top_module.dut.u_array.row[0].col[0].pe.a_in[15:0]
+@28
++{PE(0,1) va_in} tb_top_module.dut.u_array.row[0].col[1].pe.va_in
+@420
++{PE(0,1) a_in} tb_top_module.dut.u_array.row[0].col[1].pe.a_in[15:0]
+@28
++{PE(0,2) va_in} tb_top_module.dut.u_array.row[0].col[2].pe.va_in
+@420
++{PE(0,2) a_in} tb_top_module.dut.u_array.row[0].col[2].pe.a_in[15:0]
+@28
++{PE(0,3) va_in} tb_top_module.dut.u_array.row[0].col[3].pe.va_in
+@420
++{PE(0,3) a_in} tb_top_module.dut.u_array.row[0].col[3].pe.a_in[15:0]
+@200
+-Column 0: B moves down PE(0,0) to PE(3,0)
+@28
++{PE(0,0) vb_in} tb_top_module.dut.u_array.row[0].col[0].pe.vb_in
+@420
++{PE(0,0) b_in} tb_top_module.dut.u_array.row[0].col[0].pe.b_in[15:0]
+@28
++{PE(1,0) vb_in} tb_top_module.dut.u_array.row[1].col[0].pe.vb_in
+@420
++{PE(1,0) b_in} tb_top_module.dut.u_array.row[1].col[0].pe.b_in[15:0]
+@28
++{PE(2,0) vb_in} tb_top_module.dut.u_array.row[2].col[0].pe.vb_in
+@420
++{PE(2,0) b_in} tb_top_module.dut.u_array.row[2].col[0].pe.b_in[15:0]
+@28
++{PE(3,0) vb_in} tb_top_module.dut.u_array.row[3].col[0].pe.vb_in
+@420
++{PE(3,0) b_in} tb_top_module.dut.u_array.row[3].col[0].pe.b_in[15:0]

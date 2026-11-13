@@ -1,0 +1,7 @@
+VCD info: dumpfile simulation/waveforms/tb_sequential_matmul.vcd opened for output.
+Sustained throughput (start held high): 65 cycles per 4x4 product
+==============================================
+SEQUENTIAL BASELINE: 20 cases, 0 failed -> PASS
+Measured latency start->done: 64 cycles
+==============================================
+testbench/tb_sequential_matmul.v:71: $finish called at 23750000 (1ps)

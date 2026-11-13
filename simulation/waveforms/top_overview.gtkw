@@ -1,0 +1,63 @@
+[dumpfile] "tb_top_module.vcd"
+[timestart] 880000
+[size] 1580 960
+[pos] 0 0
+*-15.6 900000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 1
+[signals_width] 400
+[sst_expanded] 0
+[sst_vpaned_height] 0
+@200
+-Control
+@28
+tb_top_module.clk
+@28
+tb_top_module.rst
+@28
+tb_top_module.start
+@28
+tb_top_module.busy
+@28
+tb_top_module.done
+@24
++{ctrl_state (0 IDLE,1 CLR,2 FEED,3 DRAIN,4 CAPT,5 DONE)} tb_top_module.dut.u_ctrl.state[2:0]
+@28
+tb_top_module.dut.u_ctrl.feed_en
+@24
++{feed_step} tb_top_module.dut.u_ctrl.step[2:0]
+@28
+tb_top_module.dut.u_ctrl.capture
+@200
+-Input A lanes (Q8.8 raw, 256 = 1.0)
+@420
++{A lane 0 -> PE(0,0)} tb_top_module.dut.u_array.row[0].col[0].pe.a_in[15:0]
+@420
++{A lane 1 -> PE(1,0)} tb_top_module.dut.u_array.row[1].col[0].pe.a_in[15:0]
+@420
++{A lane 2 -> PE(2,0)} tb_top_module.dut.u_array.row[2].col[0].pe.a_in[15:0]
+@420
++{A lane 3 -> PE(3,0)} tb_top_module.dut.u_array.row[3].col[0].pe.a_in[15:0]
+@200
+-Input B lanes (Q8.8 raw)
+@420
++{B lane 0 -> PE(0,0)} tb_top_module.dut.u_array.row[0].col[0].pe.b_in[15:0]
+@420
++{B lane 1 -> PE(0,1)} tb_top_module.dut.u_array.row[0].col[1].pe.b_in[15:0]
+@420
++{B lane 2 -> PE(0,2)} tb_top_module.dut.u_array.row[0].col[2].pe.b_in[15:0]
+@420
++{B lane 3 -> PE(0,3)} tb_top_module.dut.u_array.row[0].col[3].pe.b_in[15:0]
+@200
+-Accumulators (65536 = 1.0)
+@420
++{acc PE(0,0) = C00} tb_top_module.dut.u_array.row[0].col[0].pe.acc[33:0]
+@420
++{acc PE(1,1) = C11} tb_top_module.dut.u_array.row[1].col[1].pe.acc[33:0]
+@420
++{acc PE(3,3) = C33} tb_top_module.dut.u_array.row[3].col[3].pe.acc[33:0]
+@200
+-Result port
+@22
+tb_top_module.rd_addr[3:0]
+@420
+tb_top_module.rd_q88[15:0]
