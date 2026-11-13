@@ -16,7 +16,7 @@ A synthesizable, verified output-stationary systolic array that computes
 
 ## Demo video
 
-[Watch the prototype demo (Google Drive, 4K)](https://drive.google.com/file/d/1KWItip9NCQ8qUk049JESc-a96MBhgYmx/view) - project idea, architecture walkthrough, simulation and FPGA results.
+[Watch the prototype demo (Google Drive)](https://drive.google.com/file/d/1KWItip9NCQ8qUk049JESc-a96MBhgYmx/view) - project idea, architecture walkthrough, simulation and FPGA results.
 
 ## Objectives
 
