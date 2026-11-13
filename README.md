@@ -14,6 +14,10 @@ A synthesizable, verified output-stationary systolic array that computes
 | FPGA (Lattice ECP5-25F, post-route) | 16 MULT18X18D, 1 787 LUT4, 2 150 FF, median Fmax **122 MHz** |
 | Speed-up vs sequential (FPGA time) | **6.7× latency, 6.4× throughput** |
 
+## Demo video
+
+[Watch the prototype demo (Google Drive, 4K)](https://drive.google.com/file/d/1KWItip9NCQ8qUk049JESc-a96MBhgYmx/view) - project idea, architecture walkthrough, simulation and FPGA results.
+
 ## Objectives
 
 * Design a processing element that performs signed multiply-accumulate and passes data to its neighbours.
@@ -65,15 +69,16 @@ systolic-array-accelerator/
 ├── simulation/
 │   ├── compile.sh           compile all testbenches
 │   ├── run_simulation.sh    compile + run + summary
-│   ├── logs/                compile, simulation, reference-model, mutation and timing logs
+│   ├── logs/                simulation logs for the four testbenches
 │   └── waveforms/           VCD files + GTKWave layouts (.gtkw)
-├── synthesis/               Yosys/nextpnr scripts, logs, seed sweep, experiments/
+├── synthesis/               Yosys script + post-route nextpnr ECP5 reports (JSON)
 ├── project_artifacts/
 │   ├── screenshots/         terminal and GTKWave captures
-│   └── diagrams/            Graphviz sources (.dot) + PNG/SVG
-├── docs/                    IEEE report (PDF + LaTeX), performance analysis, design review,
-│                            demo script, reference model, VCD timing extractor
-├── scripts/                 capture_mac_screenshots.sh
+│   └── diagrams/            architecture, FSM, PE and timing diagrams (PNG)
+├── docs/
+│   ├── report/              IEEE report (PDF + LaTeX source)
+│   ├── performance_analysis.md
+│   └── reference_model.py   independent NumPy cross-check of the hardware results
 ├── Makefile
 └── README.md
 ```
@@ -141,9 +146,13 @@ accumulators use 65536 = 1.0.
 ## Synthesis
 
 ```bash
-make synth                        # Yosys generic + Xilinx 7-series mapping
-./synthesis/run_pnr_ecp5.sh       # place-and-route on Lattice ECP5-25F
+make synth     # Yosys generic + Xilinx 7-series mapping (logs written to synthesis/)
 ```
+
+The post-route ECP5-25F results (three placement seeds, LFE5U-25F CABGA381,
+100 MHz constraint) were produced with Yosys `synth_ecp5` and nextpnr-ecp5;
+the seed-1 reports are kept as `synthesis/nextpnr_top_module_report.json` and
+`synthesis/nextpnr_sequential_matmul_report.json`.
 
 ## Performance summary
 
@@ -156,15 +165,15 @@ make synth                        # Yosys generic + Xilinx 7-series mapping
 | Multipliers | 16 | 1 |
 
 The full methodology, resource tables and design-space experiments are
-in [`docs/performance_analysis.md`](docs/performance_analysis.md). The
-second-pass review and mutation testing are in [`docs/design_review.md`](docs/design_review.md).
+in [`docs/performance_analysis.md`](docs/performance_analysis.md). Mutation
+testing of the testbench itself is described in the report (Simulation
+Methodology section).
 
 ## About the screenshots
 
 The images in `project_artifacts/screenshots/` are real captures of
 GTKWave and a terminal running this project's actual commands. They were
-taken on a Linux build machine (stated in each terminal capture). To
-produce macOS captures, run `./scripts/capture_mac_screenshots.sh`.
+taken on a Linux build machine (stated in each terminal capture).
 
 ## Future enhancements
 
